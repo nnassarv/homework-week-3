@@ -1,10 +1,63 @@
 // **** Arrays for ALL available characters ****
 // these are the arrays with usable characters for the password generator. Each array is differentiated by its "type of character"
-var lowerLetters = ["a","b","c","d","e","f","g","h","i","j","k","l,","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var upperLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var numbers = [0,1,2,3,4,5,6,7,8,9];
-var specialCharacters = ["!","$","%","&","^","+","*","-","_","="];
-
+var lowerLetters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l,",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var upperLetters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specialCharacters = ["!", "$", "%", "&", "^", "+", "*", "-", "_", "="];
 
 // this is the 'generate password' button
 var generateBtn = document.querySelector("#generate");
@@ -14,14 +67,20 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   // this variable will get the LENGTH of password via a window prompt
   var getLength = prompt(
-    "Enter the length of the password.\n\nNOTE: It must be a number between 8 and 128"
+    "Please enter the length of the desired password.\n\nNOTE: It must be a number between 8 and 128"
   );
+
+  // this condition checks that the input value is a number
+  if (type of getLength != Number) {
+    getLength = prompt("Please enter a number between 8 and 128");
+    console.log("NOT A NUMBER!!!");
+  }
 
   // condition in case the lenght input is less than the minimum required 8
   if (getLength < 8) {
-    getLength = prompt("Please enter a number between 8 and 128"); 
-  } 
-  
+    getLength = prompt("Please enter a number between 8 and 128");
+  }
+
   // condition in case the lenght input is more than the maximum allowed 128
   if (getLength > 128) {
     getLength = prompt("Please enter a number between 8 and 128");
@@ -44,21 +103,20 @@ function writePassword() {
   var getSpecial = confirm("do you want SPECIAL characters?");
   console.log(getSpecial);
 
-  // this condition will make sure that at least one criteria is selected. Otherwise, it will return a warning window prompt 
+  // this condition will make sure that at least one criteria is selected. Otherwise, it will return a warning window prompt
   if (!getLowerCase && !getUpperCase && !getNumbers && !getSpecial) {
     alert("You must select at least one criteria");
     return;
   }
-  
-  
+
   // **** Arrays for resulting password based on criteria selected ****
 
   // this array will contain ALL possible characters from the arrays of the "character types" selected
   var allUserOptions = [];
-  
-  // this array is where we store a guranteed value from the character types selected. This way we ensure that at least one value from each character type selected will be part of the resulting password 
+
+  // this array is where we store a guranteed value from the character types selected. This way we ensure that at least one value from each character type selected will be part of the resulting password
   var guaranteedOptions = [];
-  
+
   // this is the resulting array of characters for our password
   var result = [];
 
@@ -73,7 +131,7 @@ function writePassword() {
     guaranteedOptions.push(lowerLetters[index]);
   }
 
-    // if the user selected UPPER CASE characters...
+  // if the user selected UPPER CASE characters...
   if (getUpperCase) {
     // 1. concatenate all corresponding characters to the "character pool"
     allUserOptions = allUserOptions.concat(upperLetters);
@@ -115,7 +173,6 @@ function writePassword() {
   }
   // console.log(result);
 
-
   // now we take our result array, join it to make it a string, and then display this string of characters in the area defined in our website
   var passwordText = document.querySelector("#password");
   passwordText.value = result.join("");
@@ -123,8 +180,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
 
 // ---- GUIDE PROVIDED -----
 // // Assignment Code
