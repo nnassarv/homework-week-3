@@ -18,7 +18,7 @@ Here are the required links with the end result:
 In order to solve this task, I started by defining the arrays of possible characters to be used. These arrays were differentiated by their type. That is, an array for lower case letters, for upper case letters, for numbers, and for special characters
 
 The I implemented the prompts where the user will provide input. 
-The first prompt asks for the desired lenght of the password and the value returned must be a number. The rest of the prompts are booleans asking the user which character types they want to use.
+The first prompt asks for the desired length of the password and the value returned must be a number. The rest of the prompts are booleans asking the user which character types they want to use.
 
 Based on the input from the user, we create new arrays which become sort of "character pools" where we will later, randomly, retrieve the number of characters that the user requested (password length). 
 
