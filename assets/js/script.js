@@ -80,41 +80,35 @@ function writePassword() {
 
   // condition in case the length input is less than the minimum required 8
   if (getLength < 8) {
-    getLength = prompt(
-      "Please enter a number between 8 and 128"
-      );
+    getLength = prompt("Please enter a number between 8 and 128");
   }
 
   // condition in case the length input is more than the maximum allowed 128
   if (getLength > 128) {
-    getLength = prompt(
-      "Please enter a number between 8 and 128"
-      );
+    getLength = prompt("Please enter a number between 8 and 128");
   }
   console.log(getLength);
 
   // this boolean will define if the password should have LOWER CASE LETTERS via a window prompt
   var getLowerCase = confirm(
     "Do you want to include LOWER CASE letters in your password?"
-    );
+  );
   console.log("include lower case: " + getLowerCase);
 
   // this boolean will define if the password should have UPPER CASE LETTERS via a window prompt
   var getUpperCase = confirm(
     "Do you want to include UPPER CASE letters in your password?"
-    );
+  );
   console.log("include upper case: " + getUpperCase);
 
   // this boolean will define if the password should have NUMBERS via a window prompt
-  var getNumbers = confirm(
-    "Do you want to include NUMBERS in your password?"
-    );
+  var getNumbers = confirm("Do you want to include NUMBERS in your password?");
   console.log("include numbers: " + getNumbers);
 
   // this boolean will define if the password should have SPECIAL CHARACTERS via a window prompt
   var getSpecial = confirm(
     "Do you want to include SPECIAL CHARACTERS in your password?"
-    );
+  );
   console.log("include special characters: " + getSpecial);
 
   // this condition will make sure that at least one criteria is selected. Otherwise, it will return a warning window prompt
