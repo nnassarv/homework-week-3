@@ -71,37 +71,51 @@ function writePassword() {
   );
 
   // this condition checks that the input value is a number
-  if (type of getLength != Number) {
-    getLength = prompt("Please enter a number between 8 and 128");
+  if (typeof getLength != Number) {
+    getLength = prompt(
+      "Please enter a number between 8 and 128"
+      );
     console.log("NOT A NUMBER!!!");
   }
 
-  // condition in case the lenght input is less than the minimum required 8
+  // condition in case the length input is less than the minimum required 8
   if (getLength < 8) {
-    getLength = prompt("Please enter a number between 8 and 128");
+    getLength = prompt(
+      "Please enter a number between 8 and 128"
+      );
   }
 
-  // condition in case the lenght input is more than the maximum allowed 128
+  // condition in case the length input is more than the maximum allowed 128
   if (getLength > 128) {
-    getLength = prompt("Please enter a number between 8 and 128");
+    getLength = prompt(
+      "Please enter a number between 8 and 128"
+      );
   }
   console.log(getLength);
 
   // this boolean will define if the password should have LOWER CASE LETTERS via a window prompt
-  var getLowerCase = confirm("do you want LOWER CASE characters?");
-  console.log(getLowerCase);
+  var getLowerCase = confirm(
+    "Do you want to include LOWER CASE letters in your password?"
+    );
+  console.log("include lower case: " + getLowerCase);
 
   // this boolean will define if the password should have UPPER CASE LETTERS via a window prompt
-  var getUpperCase = confirm("do you want UPPER CASE characters?");
-  console.log(getUpperCase);
+  var getUpperCase = confirm(
+    "Do you want to include UPPER CASE letters in your password?"
+    );
+  console.log("include upper case: " + getUpperCase);
 
   // this boolean will define if the password should have NUMBERS via a window prompt
-  var getNumbers = confirm("do you want numeric characters?");
-  console.log(getNumbers);
+  var getNumbers = confirm(
+    "Do you want to include NUMBERS in your password?"
+    );
+  console.log("include numbers: " + getNumbers);
 
   // this boolean will define if the password should have SPECIAL CHARACTERS via a window prompt
-  var getSpecial = confirm("do you want SPECIAL characters?");
-  console.log(getSpecial);
+  var getSpecial = confirm(
+    "Do you want to include SPECIAL CHARACTERS in your password?"
+    );
+  console.log("include special characters: " + getSpecial);
 
   // this condition will make sure that at least one criteria is selected. Otherwise, it will return a warning window prompt
   if (!getLowerCase && !getUpperCase && !getNumbers && !getSpecial) {
@@ -114,7 +128,7 @@ function writePassword() {
   // this array will contain ALL possible characters from the arrays of the "character types" selected
   var allUserOptions = [];
 
-  // this array is where we store a guranteed value from the character types selected. This way we ensure that at least one value from each character type selected will be part of the resulting password
+  // this array is where we store a guaranteed value from the character types selected. This way we ensure that at least one value from each character type selected will be part of the resulting password
   var guaranteedOptions = [];
 
   // this is the resulting array of characters for our password
