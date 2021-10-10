@@ -71,12 +71,12 @@ function writePassword() {
   );
 
   // this condition checks that the input value is a number
-  if (typeof getLength != Number) {
-    getLength = prompt(
-      "Please enter a number between 8 and 128"
-      );
-    console.log("NOT A NUMBER!!!");
-  }
+  // if (typeof getLength != Number) {
+  //   getLength = prompt(
+  //     "Please enter a number between 8 and 128"
+  //     );
+  //   console.log("NOT A NUMBER!!!");
+  // }
 
   // condition in case the length input is less than the minimum required 8
   if (getLength < 8) {
